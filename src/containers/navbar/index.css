@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: midnightblue;
+    color: whitesmoke;
+    margin-bottom: 50px;
+}
+.navbar a {
+    font-family: 'Lato';
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.cantidadCart {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    background-color: crimson;
+    background-size: 10px;
+    width: 22px;
+    text-align: center;
+    padding: 0px;
+    border-radius: 10px;
+
+}
+
+
+
+

@@ -1,0 +1,21 @@
+.producto {
+    align-items: center;
+    font-size: 1rem;
+    margin: 10px;
+    background-color: whitesmoke;
+}
+
+.producto img {
+    width: 80%;
+}
+
+.producto h4 {
+    margin: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+.producto button {
+    color: white;
+    font-weight: bold;
+}
+
