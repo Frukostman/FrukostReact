@@ -9,13 +9,18 @@ export default function ItemDetail({info}) {
 
     const producto = info
     
-    const { handleCarrito } = useAppContext()
+    const { addProductToCarrito } = useAppContext()
 
     const [cantidadCart, setcantidadCart] = useState();
 
     const onAddItem = (value) => {
         setcantidadCart(value)
+        console.log(value)
     }
+
+    
+
+    console.log(producto.cantidad)
 
     return(
         
@@ -27,7 +32,7 @@ export default function ItemDetail({info}) {
                     
                     <ItemCounter initialValue={1} maxValue={5} onAdd={onAddItem}/>
                     <hr/>
-                    <button onClick={() => handleCarrito(producto)} className="btn  btn-warning">Comprar: {cantidadCart} </button>
+                    <button onClick={() => addProductToCarrito(producto, cantidadCart)} className="btn  btn-warning">Comprar: {cantidadCart} </button>
                 </div>
                 
             </div>

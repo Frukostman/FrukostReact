@@ -5,20 +5,28 @@ const useAppContext = () => useContext(AppContext);
 
 export const AppProvider = ({children}) => {
 
-    const [carrito, setcarrito] = useState([])
+    const [carrito, setCarrito] = useState([])
 
-    
-
-    const handleCarrito = (newValue) => {
-        if (newValue in carrito) {
-
+    const addProductToCarrito = (product, quantity) => {
+        const productInCarrito = carrito.find((p) => p.id === product.id)
+        if (productInCarrito === undefined) {
+          setCarrito([...carrito, { ...product, quantity }])
         } else {
-            setcarrito([...carrito, newValue])
-            console.log(carrito)
-        }     
-    }
+          productInCarrito.quantity += quantity
+          setCarrito([...carrito])
+        }
+      }
+     
+        // const handleCarrito = (newValue) => {
+    //     if (newValue in carrito) {
 
-    return <AppContext.Provider value={{ carrito, handleCarrito, total }}>
+    //     } else {
+    //         setcarrito([...carrito, newValue])
+    //         console.log(carrito)
+    //     }     
+    // }
+
+    return <AppContext.Provider value={{ carrito, addProductToCarrito }}>
         {children}
     </AppContext.Provider>
 }
