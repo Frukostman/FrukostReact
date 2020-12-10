@@ -5,35 +5,56 @@ import { NavLink } from 'react-router-dom';
 
 export default function Cart() {
 
-    // const funcion = () => {
-    //     alert("hola")
-    // }
+     function removerCarrito(index) {
+         carrito[index].cantidad = 0;
+         if (carrito[index].cantidad <= 0) {
+           carrito.splice(index, 1);
+         }
+         //localStorage.carrito = JSON.stringify(carrito);
+         //loadCarrito();
+       }  
+    
+    //<button style="float:right" onclick="removerCarrito(${carrito.indexOf(producto)})">x</button>
+
+    const ItemCarrito = () => {
+
+        return(
+                <div className="row d-flex justify-content-around"> 
+                    <p>hola</p>                    
+                </div>        
+        );
+    };
 
     const { carrito } = useAppContext()
     
-   
+   console.log(carrito)
     
     return(
-        <div className="Cart">
-            <h1>CARRITO</h1> 
+        <div className="Cart container">
+            <h1 class="">CARRITO</h1> 
 
-                <> {carrito.length==0 ? 
+                <> 
+                
+                {carrito.length==0 ? 
                 
                 (<div>
                     <p>No tenes productos en el carrito</p>
                     <NavLink to={`/home`}>  Seguir comprando... </NavLink>
-                        
-                        
                     </div>)
                 
-                : (<p>
-                     {carrito.map((entry) => (
-                     <><p>{entry.name}</p>
-                     <p>{entry.price}</p>
-                     <p>{entry.cantidad}</p></>
-                     ))}
-                 </p>)}
-                
+                : (<>             
+                    {carrito.map((entry) => {
+                         return (
+                            <>
+                                <ItemCarrito/>
+                               <p>Item: <b>{entry.name}</b></p>
+                               <p>Precio unitario: {entry.price} $</p>
+                               <p>{entry.cantidad}</p>
+                               <p>Subtotal: {entry.cantidad * entry.price} $</p>
+                               <button onClick={removerCarrito()}>X</button>
+                            </>
+                            )})}
+                 </>)}
                 </>
 
                  

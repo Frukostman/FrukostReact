@@ -14,14 +14,15 @@ useEffect(() => {
 
         fetch(url)
            .then(response => {
+               console.log(response)
                return response.json()
            })
            .then((response) => {
-            //console.table(response)
+            console.log(response)
             setProducto(response.results)
             setLoading(false)
            })
-    }, 1000);
+    }, 2000);
 
 }, []);
 

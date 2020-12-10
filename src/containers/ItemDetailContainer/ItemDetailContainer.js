@@ -22,9 +22,9 @@ export default function ItemDetailContainer() {
                    return response.json()
                })
                 .then((response) => {
-                 response.cantidad = 0
+                 response.cantidad = 1
                  response.price = Math.floor(Math.random() * (200 - 10) + 10)
-                 console.log(response)
+                //  console.log(response)
                  setProducto(response)
                  setLoading(false)
                })

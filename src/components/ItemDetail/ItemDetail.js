@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import ItemCounter from '../ItemCounter/ItemCounter'
+import { NavLink } from 'react-router-dom';
 import './ItemDetail.css';
 
 import useAppContext from '../../context/useAppContext';
@@ -8,19 +9,22 @@ import useAppContext from '../../context/useAppContext';
 export default function ItemDetail({info}) {
 
     const producto = info
-    
+
+    console.log(producto)
+
     const { addProductToCarrito } = useAppContext()
 
-    const [cantidadCart, setcantidadCart] = useState();
+    const [cantidadCart, setcantidadCart] = useState(1);
 
     const onAddItem = (value) => {
-        setcantidadCart(value)
+        
         console.log(value)
+        producto.cantidad = value
+        console.log(producto.cantidad)
+        setcantidadCart(producto.cantidad)
     }
 
     
-
-    console.log(producto.cantidad)
 
     return(
         
@@ -32,8 +36,12 @@ export default function ItemDetail({info}) {
                     
                     <ItemCounter initialValue={1} maxValue={5} onAdd={onAddItem}/>
                     <hr/>
+                    <NavLink to={`/home`}>                     
                     <button onClick={() => addProductToCarrito(producto, cantidadCart)} className="btn  btn-warning">Comprar: {cantidadCart} </button>
+                    </NavLink> 
+                
                 </div>
+
                 
             </div>
                 <img src={info.image} alt=""></img>
