@@ -9,12 +9,12 @@ export const AppProvider = ({children}) => {
 
     //const [precioTotal, setPrecioTotal] = useState(0)
 
-    const addProductToCarrito = (product, quantity) => {
+    const addProductToCarrito = (product, cantidad) => {
         const productInCarrito = carrito.find((p) => p.id === product.id)
         if (productInCarrito === undefined) {
-          setCarrito([...carrito, { ...product, quantity }])
+          setCarrito([...carrito, { ...product, cantidad }])
         } else {
-          productInCarrito.quantity += quantity
+          productInCarrito.cantidad += cantidad
           setCarrito([...carrito])
         }
       }
@@ -27,7 +27,7 @@ export const AppProvider = ({children}) => {
       const sumarPrecioTotal = (array) => {
         let total = 0
         array.forEach(element => {
-          total = total + element.price
+          total = total + (element.price * element.cantidad)
         });
         return total
       }
