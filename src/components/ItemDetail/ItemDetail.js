@@ -18,9 +18,9 @@ export default function ItemDetail({info}) {
 
     const onAddItem = (value) => {
         
-        console.log(value)
+        // console.log(value)
         producto.cantidad = value
-        console.log(producto.cantidad)
+        // console.log(producto.cantidad)
         setcantidadCart(producto.cantidad)
     }
 

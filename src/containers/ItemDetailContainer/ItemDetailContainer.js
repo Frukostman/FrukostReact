@@ -28,7 +28,7 @@ export default function ItemDetailContainer() {
                  setProducto(response)
                  setLoading(false)
                })
-        }, 2000);
+        }, 1000);
     
     }, [id])
 

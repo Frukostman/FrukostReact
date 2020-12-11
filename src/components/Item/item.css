@@ -14,6 +14,11 @@
     padding: 5px;
     font-size: 18px;
 }
+.producto p {
+    padding : 15px;
+    font-size: 15px;
+}
+
 .producto button {
     color: white;
     font-weight: bold;

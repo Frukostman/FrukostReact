@@ -2,9 +2,18 @@ import './index.css';
 import Icon from '../../components/Icon/Icon';
 import useAppContext from '../../context/useAppContext';
 
+
 export default function Navbar() {
 
     const { carrito } = useAppContext()
+
+    const sumaTotal = () => {
+        let total = 0  
+        carrito.forEach(element => {
+            total = total + element.cantidad
+        });
+        return total
+    };
 
     const handleClick = (e) => {
         //console.log(e.target.outerHTML)
@@ -18,7 +27,7 @@ export default function Navbar() {
 
                         <div>
                             <Icon iconName={"tag"} callback={handleClick}/>
-                            <p class="cantidadCart">{ carrito.length }</p>
+                            <p class="cantidadCart">{ sumaTotal() }</p>
                         </div>
 
                 </div>
