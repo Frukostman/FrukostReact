@@ -1,15 +1,11 @@
-import './App.css';
-
 import Header from './containers/header/Index';
-import Navbar from './containers/navbar/Index';
+import Navbar from './components/navbar/Index';
 import Home from './containers/home/Home';
-import Cart from './containers/Cart/Cart';
+import Cart from './components/Cart/Cart';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
-import Footer from './containers/Footer/Footer'
+import Footer from './components/Footer/Footer'
 
 import { BrowserRouter, Switch, Route} from 'react-router-dom'
-
-
 import { AppProvider } from './context/useAppContext';
 
 

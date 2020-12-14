@@ -9,6 +9,7 @@ import useAppContext from '../../context/useAppContext';
 export default function ItemDetail({info}) {
 
     const producto = info
+    console.log(info.name)
 
     const { addProductToCarrito } = useAppContext()
 
@@ -29,6 +30,7 @@ export default function ItemDetail({info}) {
             <div>
                 <h2>{info.name}</h2>
                 <h3>Precio: {info.price} $</h3>
+                <h3>id: {info.id} $</h3>
                 <div className="botonera">
                     
                     <ItemCounter initialValue={1} maxValue={5} onAdd={onAddItem}/>

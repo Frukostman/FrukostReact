@@ -1,12 +1,16 @@
 .header {
-    background-color: white;
-    height: 50px;
+    background-color:midnightblue;
+
     text-align: center;
-    color:crimson;
+    color: white;
+    margin: 0px;
 }
 
 .header h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 50px;
-    margin: 10px;
+    font-size: 80px;
+    margin: 0px;
+}
+.header span {
+    color: crimson;
 }

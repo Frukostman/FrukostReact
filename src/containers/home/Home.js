@@ -40,8 +40,6 @@ return (
         
     {loading ? <h1 className="text-center animate__animated animate__pulse">Loading...</h1> : <ItemList items={producto}/>}
     
-
-
     </>
     )       
 };
