@@ -19,10 +19,15 @@ export const AppProvider = ({children}) => {
         }
       }
      
-      const removerCarrito = (index) => {
-            carrito.splice(carrito.findIndex((p) => p.index === index),1)
-            console.log(carrito)
+      const sacarDelCarrito = (index) => {
+
+        carrito.splice(index ,1)     
+        setCarrito([...carrito])  
       } 
+
+      const vaciarCarrito = () => {
+        setCarrito([])
+      }
 
       const sumarPrecioTotal = (array) => {
         let total = 0
@@ -31,8 +36,9 @@ export const AppProvider = ({children}) => {
         });
         return total
       }
+      
 
-    return <AppContext.Provider value={{ carrito, addProductToCarrito, removerCarrito, sumarPrecioTotal }}>
+    return <AppContext.Provider value={{ carrito, addProductToCarrito, sacarDelCarrito, sumarPrecioTotal, vaciarCarrito }}>
         {children}
     </AppContext.Provider>
 }

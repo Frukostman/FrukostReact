@@ -5,7 +5,7 @@ export default function Icon({iconName, callback}) {
 
     return (
         <div>
-            <NavLink to={`/${iconName}`} onClick={callback} activeClassName="currentCategory">  <i class={`fas fa-${iconName}`}></i> </NavLink>
+            <NavLink to={`/${iconName}`} onClick={callback} activeClassName="currentCategory">  <i className={`fas fa-${iconName}`}></i> </NavLink>
            
         </div>
     )    

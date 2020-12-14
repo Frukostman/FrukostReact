@@ -22,17 +22,11 @@ export default function Navbar() {
     return(
             <div className="containerFluid">
                 <div className="navbar pr-5 pl-5">
-
-                        <Icon iconName={"home"} callback={handleClick}/>
-
-                        <div>
-                            <Icon iconName={"tag"} callback={handleClick}/>
-                            <p class="cantidadCart">{ sumaTotal() }</p>
-                        </div>
-
+                    <Icon iconName={"home"} callback={handleClick}/>
+                    <Icon iconName={"tag"} callback={handleClick}/>
+                    <p className="cantidadCart">{ sumaTotal() }</p>
                 </div>
-            </div>
-          
-            
+            </div>         
+       
     )
 }

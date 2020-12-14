@@ -27,8 +27,8 @@ const ItemCounter = ({initialValue, maxValue, onAdd}) => {
             <p>Cantidad</p>
             <p>{counter}</p>
             <div>
-                <button style={{width: "40px"}} class="btn btn-danger" onClick={restar}>-</button>
-                <button style={{width: "40px"}} class="btn btn-success" onClick={incrementar}>+</button>
+                <button style={{width: "40px"}} className="btn btn-danger" onClick={restar}>-</button>
+                <button style={{width: "40px"}} className="btn btn-success" onClick={incrementar}>+</button>
             </div>
                 
 

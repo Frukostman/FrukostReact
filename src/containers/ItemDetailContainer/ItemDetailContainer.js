@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import { getFirestore } from '../../firebase/index';
 
 
 export default function ItemDetailContainer() {
@@ -12,35 +13,39 @@ export default function ItemDetailContainer() {
 
     useEffect(() => {
 
-        //console.log(id)
+            const db = getFirestore();
+            const itemCollection = db.collection("productos");
+            
+            const idItem = itemCollection.doc(id)
 
-        setTimeout(() => {
-            const url = `https://rickandmortyapi.com/api/character/${id}`
-    
-            fetch(url)
-               .then(response => {
-                   return response.json()
-               })
-                .then((response) => {
-                 response.cantidad = 1
-                 response.price = Math.floor(Math.random() * (200 - 10) + 10)
-                //  console.log(response)
-                 setProducto(response)
-                 setLoading(false)
-               })
-        }, 1000);
-    
-    }, [id])
+            idItem.get().then((response) => {
+                const item = { ...response.data(), id: id };
+                setProducto(item);
+                setLoading(false);
+            })
+          }, [id]);
 
     return(
-
-        <>
-
-            {loading ? <h1 className="text-center animate__animated animate__pulse">Loading...</h1> : <ItemDetail info={producto}/>}
-            
-
-        </>
-
-
+            <>
+                {loading ? <h1 className="text-center animate__animated animate__pulse">Loading...</h1> : <ItemDetail info={producto}/>}        
+            </>
     )
 }
+
+
+// useEffect(() => {
+
+//     setTimeout(() => {
+//         const url = `https://rickandmortyapi.com/api/character/${id}`
+
+//         fetch(url)
+//            .then(response => {
+//                return response.json()
+//            })
+//             .then((response) => {
+//              setProducto(response)
+//              setLoading(false)
+//            })
+//     }, 1000);
+
+// }, [id])

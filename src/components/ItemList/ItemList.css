@@ -1,0 +1,4 @@
+.cajonFrutas {
+    display: flex;
+    flex-direction: row;
+}

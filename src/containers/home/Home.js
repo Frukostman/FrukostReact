@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 import ItemList from '../../components/ItemList/ItemList'
+import { getFirestore } from '../../firebase/index';
+// import '../../Productos/ProductosFB.jsx'
 
 
 const Home = () => {
@@ -7,35 +9,38 @@ const Home = () => {
     const [loading, setLoading] = useState(true);                   
     const [producto, setProducto] = useState({});
 
-useEffect(() => {
 
-    setTimeout(() => {
-        const url = "https://rickandmortyapi.com/api/character"
+    useEffect(() => {
+        const db = getFirestore();
+        const itemCollection = db.collection("productos");
 
-        fetch(url)
-           .then(response => {
-            //    console.log(response)
-               return response.json()
-           })
-           .then((response) => {
-            // console.log(response)
-            setProducto(response.results)
-            setLoading(false)
-           })
-    }, 1000);
+        itemCollection.get().then((response) => {
+         
+        const producto = response.docs.map((element) => 
+          ({...element.data(),
+            id: element.id,
+        }));
 
-}, []);
+          setProducto(producto);
+          setLoading(false)
+        });
 
-// const valorDeContext = useContext(AppContext);
+
+      }, []);
 
 return (
 
     <>
-    
-
+    {/* <div className="container-fluid text-center m-4">
+      <div className="btn-group" role="group" aria-label="Basic example">
+        <button type="button" className="btn btn-light">Frutas</button>
+        <button type="button" className="btn btn-light">Verduras</button>
+      </div>
+    </div> */}
+        
     {loading ? <h1 className="text-center animate__animated animate__pulse">Loading...</h1> : <ItemList items={producto}/>}
     
-    
+
 
     </>
     )       

@@ -3,10 +3,16 @@
     font-size: 1rem;
     margin: 10px;
     background-color: whitesmoke;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
 }
 
 .producto img {
     width: 100%;
+}
+.producto img:hover {
+    opacity: 0.8;
 }
 
 .producto h4 {

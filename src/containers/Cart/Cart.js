@@ -3,11 +3,11 @@ import useAppContext from '../../context/useAppContext';
 import { NavLink } from 'react-router-dom';
 
 
-export default function Cart() {
+export default function Cart() { 
     
-    const { carrito, removerCarrito, sumarPrecioTotal  } = useAppContext()
+    const { carrito, sacarDelCarrito, sumarPrecioTotal, vaciarCarrito  } = useAppContext()
     
-      const CarritoVacio = () => {
+    const CarritoVacio = () => {
     
        return(   
            <div className="carritoVacio container">
@@ -28,20 +28,21 @@ export default function Cart() {
                                    <p>Precio unitario: {entry.price} $</p>
                                    <p>{entry.cantidad}</p>
                                    <p>Subtotal: {entry.cantidad * entry.price} $</p>
-                                   <button onClick={() => removerCarrito(index)}>X</button>  
+                                   <button onClick={() => sacarDelCarrito(index)}>X</button>  
                                </>
-                           )})}
-                
-    
+                           )})
+                           }
                </div>        
        );
+
     };
-    
+
     return(
                <>
-                    <h1 class="text-center">CARRITO</h1>
-                    <h2 class="text-center">TOTAL:{sumarPrecioTotal(carrito)} $</h2> 
-                    <> {carrito.length==0 ? <CarritoVacio/> : <ItemsCarrito/> } </>
+                    <h1 className="text-center">CARRITO</h1>
+                    <h2 className="text-center">TOTAL:{sumarPrecioTotal(carrito)} $</h2> 
+                    <button className="text-center" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
+                    <> {carrito.length===0 ? <CarritoVacio/> : <ItemsCarrito/> } </>                                      
                </>
            )
            }

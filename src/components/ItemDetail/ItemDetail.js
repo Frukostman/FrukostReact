@@ -10,17 +10,14 @@ export default function ItemDetail({info}) {
 
     const producto = info
 
-    console.log(producto)
-
     const { addProductToCarrito } = useAppContext()
 
     const [cantidadCart, setcantidadCart] = useState(1);
 
     const onAddItem = (value) => {
         
-        // console.log(value)
         producto.cantidad = value
-        // console.log(producto.cantidad)
+
         setcantidadCart(producto.cantidad)
     }
 
@@ -30,7 +27,7 @@ export default function ItemDetail({info}) {
         
         <div className="container d-flex justify-content-around informacion">
             <div>
-                <h2>Nombre: {info.name}</h2>
+                <h2>{info.name}</h2>
                 <h3>Precio: {info.price} $</h3>
                 <div className="botonera">
                     
@@ -44,10 +41,8 @@ export default function ItemDetail({info}) {
 
                 
             </div>
-                <img src={info.image} alt=""></img>
-
-
-        </div>
+                <img src={`${process.env.PUBLIC_URL}/${info.image}`} alt={info.name} />
+            </div>
         
     )
 }

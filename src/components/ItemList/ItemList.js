@@ -1,9 +1,10 @@
 import Item from "../Item/Item"
+import './ItemList.css'
 
 const ItemList = ({items}) => {
 
     return(
-            <div className="row d-flex justify-content-around"> 
+            <div className="cajonFrutas"> 
             
                 {items.map((item, index) => {
                     return (

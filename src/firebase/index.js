@@ -9,14 +9,14 @@ const app = firebase.initializeApp(
         storageBucket: "coderreact-1f8c6.appspot.com",
         messagingSenderId: "985125306289",
         appId: "1:985125306289:web:5c9eb127ce577830fb8790"
-      }
+    }
 )
 
 export const getFirebase = () => {
-    return app
+    return app;
 }
 
 //para llamar la base de datos
-export const grtFirestore = () => {
-    return firebase.firestore
+export const getFirestore = () => {
+    return firebase.firestore();
 }
