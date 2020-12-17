@@ -5,11 +5,9 @@ import './ItemDetail.css';
 
 import useAppContext from '../../context/useAppContext';
 
-
 export default function ItemDetail({info}) {
 
     const producto = info
-    console.log(info.name)
 
     const { addProductToCarrito } = useAppContext()
 
@@ -20,9 +18,7 @@ export default function ItemDetail({info}) {
         producto.cantidad = value
 
         setcantidadCart(producto.cantidad)
-    }
-
-    
+    }   
 
     return(
         

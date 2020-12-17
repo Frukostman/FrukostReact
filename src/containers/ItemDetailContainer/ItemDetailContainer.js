@@ -16,16 +16,20 @@ export default function ItemDetailContainer() {
 
             const db = getFirestore();
             const itemCollection = db.collection("productos");
-            
-            console.log(itemCollection)
 
             const idItem = itemCollection.doc(id)
 
-            idItem.get().then((response) => {
-                const item = { ...response.data(), id: id };
+            idItem.get().then((response, reject) => {
+
+                if(response.size === 0) reject(`<h1>error</h1>`)
+
+                const item = {...response.data(), id: id }                                        
+           
                 setProducto(item);
-                setLoading(false);
+                setLoading(false);   
+                console.log(response.size)       
             })
+            
           }, [id]);
 
               return(

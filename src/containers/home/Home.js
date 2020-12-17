@@ -31,12 +31,14 @@ const Home = () => {
 return (
 
     <>
-    {/* <div className="container-fluid text-center m-4">
-      <div className="btn-group" role="group" aria-label="Basic example">
-        <button type="button" className="btn btn-light">Frutas</button>
-        <button type="button" className="btn btn-light">Verduras</button>
-      </div>
-    </div> */}
+        <div className="container-fluid text-center m-4">
+        
+          <div className="btn-group" role="group" aria-label="Basic example">
+            <button type="button" className="btn btn-light">Frutas</button>
+            <button type="button" className="btn btn-light">Verduras</button>
+            
+          </div>
+        </div>
         
     {loading ? <h1 className="text-center animate__animated animate__pulse">Loading...</h1> : <ItemList items={producto}/>}
     

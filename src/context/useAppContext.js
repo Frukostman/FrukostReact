@@ -7,8 +7,6 @@ export const AppProvider = ({children}) => {
 
     const [carrito, setCarrito] = useState([])
 
-    //const [precioTotal, setPrecioTotal] = useState(0)
-
     const addProductToCarrito = (product, cantidad) => {
         const productInCarrito = carrito.find((p) => p.id === product.id)
         if (productInCarrito === undefined) {
@@ -30,13 +28,13 @@ export const AppProvider = ({children}) => {
       }
 
       const sumarPrecioTotal = (array) => {
+        console.log(array)
         let total = 0
         array.forEach(element => {
           total = total + (element.price * element.cantidad)
         });
         return total
       }
-      
 
     return <AppContext.Provider value={{ carrito, addProductToCarrito, sacarDelCarrito, sumarPrecioTotal, vaciarCarrito }}>
         {children}
