@@ -1,0 +1,15 @@
+.botonesContador {
+    display :flex;
+    flex-direction: column;
+
+}
+
+.botonesContador i {
+    font-size: 20px;
+    opacity: 0.7;
+    color: red;
+}
+
+.botonesContador :hover {
+    opacity: 1;
+}

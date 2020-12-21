@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './index.css'
 
 
 
@@ -23,17 +24,13 @@ const ItemCounter = ({initialValue, maxValue, onAdd}) => {
 
     return (
         
-        <div style={{color: "midnightBlue", textAlign: "center"}}>
-            <p>Cantidad</p>
-            <p>{counter}</p>
-            <div>
-                <button style={{width: "40px"}} className="btn btn-danger" onClick={restar}>-</button>
-                <button style={{width: "40px"}} className="btn btn-success" onClick={incrementar}>+</button>
-            </div>
-                
-
-        </div>
-
+        
+            <div className="">
+                <div className="col  botonesContador">
+                    <i style={{color : "green"}} onClick={incrementar} class="fas fa-plus-square"></i>
+                    <i style={{color : "red"}} onClick={restar} class="fas fa-minus-square"></i>
+                </div>
+            </div>            
         
     );
 }

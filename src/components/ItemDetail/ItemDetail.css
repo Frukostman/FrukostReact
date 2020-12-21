@@ -1,5 +1,18 @@
+.informacion img {
+    height: 300px;
+}
+.detalleProducto {
+    margin: 0px;
+
+    text-align: left;
+}
+.detalleProducto p {
+    margin-bottom: 0px;
+    font-size: 15px;
+}
 .botonera {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
 }

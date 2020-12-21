@@ -1,17 +1,18 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: flex-end;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     background-color: midnightblue;
     color: whitesmoke;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    text-align: end ;
 }
 .navbar a {
     font-family: 'Lato';
-    font-size: 20px;
+    font-size: 25px;
     color: whitesmoke;
 }
 
@@ -25,7 +26,23 @@
     text-align: center;
     padding: 0px;
     border-radius: 10px;
+}
+.header {
+    background-color:midnightblue;
+    text-align: end;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
 
+.header h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 80px;
+    margin: 0px;
+    padding: 0px;
+}
+.header span {
+    color: crimson;
 }
 
 

@@ -1,4 +1,3 @@
-import Header from './containers/header/Index';
 import Navbar from './components/navbar/Index';
 import Home from './containers/home/Home';
 import Cart from './components/Cart/Cart';
@@ -16,15 +15,22 @@ function App() {
 
         <BrowserRouter>
         
-            <Header />
             <Navbar />
             <Switch>
 
-              <Route exact path='/tag'>
+              <Route exact path='/shopping-cart'>
                 <Cart />
               </Route>
 
               <Route exact path="/:type?">
+                <Home />
+              </Route>
+
+              <Route exact path='/tipo/:cat'>
+                <Home />
+              </Route>
+
+              <Route exact path='/estacion/:sea'>
                 <Home />
               </Route>
 

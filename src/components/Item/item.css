@@ -1,18 +1,21 @@
 .producto {
     align-items: center;
     font-size: 1rem;
-    margin: 10px;
-    background-color: whitesmoke;
-    width: 170px;
+    margin: 0px 5px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
+    height: 400px;
+    opacity: 0.9;
 }
 
 .producto img {
     width: 100%;
+    opacity: 0.8;
 }
 .producto img:hover {
-    opacity: 0.8;
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .producto h4 {
@@ -21,12 +24,13 @@
     font-size: 18px;
 }
 .producto p {
-    padding : 15px;
+    padding : 0px;
     font-size: 15px;
 }
 
 .producto button {
-    color: white;
-    font-weight: bold;
+    margin: 0px;
 }
-
+.producto button:hover {
+    transform: scale(1.05); 
+}

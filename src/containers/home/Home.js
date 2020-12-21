@@ -1,46 +1,89 @@
 import {useState, useEffect} from 'react'
 import ItemList from '../../components/ItemList/ItemList'
-import { getFirestore } from '../../firebase/index';
-// import '../../Productos/ProductosFB.jsx'
-
+import TraerProdFB from '../../Productos/ProductosFB'
+import { Link, useParams } from 'react-router-dom'
+import './home.css'
 
 const Home = () => {
 
-    const [loading, setLoading] = useState(true);                   
-    const [producto, setProducto] = useState({});
+  const [loading, setLoading] = useState(true);                   
+  const [producto, setProducto] = useState({});
 
+  const { cat, sea } = useParams()
 
     useEffect(() => {
-        const db = getFirestore();
-        const itemCollection = db.collection("productos");
 
-        itemCollection.get().then((response) => {
-         
-        const producto = response.docs.map((element) => 
-          ({...element.data(),
-            id: element.id,
-        }));
+      TraerProdFB(cat, sea).then((result) => {
 
-          setProducto(producto);
-          setLoading(false)
+// el resultado va al state y se saca el loading
+          setProducto(result);
+          setLoading(false); 
         });
+        
+      }, [cat, sea]);
 
+    const Filtros = () => {
+      return (
+        <div className="container col-2 filtros shadow pl-4 mb-2 bg-white rounded text-left">
+              <h3>Filtros:</h3>
+              <br/>
+                <div>
+                <h5>Por tipo:</h5>
+                <ul>
+                  <li>
+                    <Link style={{color: "crimson"}} to={`/tipo/Fruta`}>
+                      <p className="display-1"> Frutas <i class="fas fa-apple-alt"></i></p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link style={{color: "green"}} to={`/tipo/Verdura`}>
+                        <p className="display-1">Verduras <i class="fas fa-carrot"></i></p>
+                    </Link>
+                  </li>
+                </ul>
+                </div>
+                <br/>
+                <div>
+                  <h5>Por estacion:</h5>
+                  <ul>
+                    <li>
+                      <Link style={{color: "yellow"}} to={`/estacion/Verano`}>
+                          <p className="display-1">Verano <i class="fas fa-sun"></i></p>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link style={{color: "brown"}} to={`/estacion/Otoño`}>
+                          <p className="display-1">Otoño <i class="fab fa-canadian-maple-leaf"></i></p>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link style={{color: "blue"}} to={`/estacion/Invierno`}>
+                          <p className="display-1">Invierno <i class="fas fa-snowflake"></i></p>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link style={{color: "green"}} to={`/estacion/Primavera`}>
+                          <p className="display-1">Primavera <i class="fas fa-seedling"></i></p>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+      )
 
-      }, []);
+    }
+
 
 return (
 
     <>
-        <div className="container-fluid text-center m-4">
-        
-          <div className="btn-group" role="group" aria-label="Basic example">
-            <button type="button" className="btn btn-light">Frutas</button>
-            <button type="button" className="btn btn-light">Verduras</button>
-            
+        <div className="container-fluid text-center m-1">
+          <div className="btn-group">
+          
+            {loading ? <h1 className="mb-5 text-center animate__animated animate__pulse">Loading...</h1> : <><Filtros/><ItemList items={producto}/></>}
           </div>
-        </div>
+        </div> 
         
-    {loading ? <h1 className="text-center animate__animated animate__pulse">Loading...</h1> : <ItemList items={producto}/>}
     
     </>
     )       
