@@ -1,21 +1,23 @@
-import './index.css';
+import './Footer.css';
 
-
-export default function Footer() {
+const Footer = () =>{
     return(
         <footer>
-                <div class="footer">
-                    <div class="footer-links">
-                    <a href="https://www.behance.net/santiagohomps" target="_blank"><i class="fab fa-behance"></i></a>
-                    <a href="https://www.instagram.com/tomas_borgstrom/" target="blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://ar.linkedin.com/in/santiago-homps" target="blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Frukostman" target="blank"><i class="fab fa-github"></i></a>
+                <p></p>
+                <br/>
+                <div className="footer">
+                    <div className="footer-links">
+                    <a href="https://www.behance.net/santiagohomps" target="blank"><i className="fab fa-behance"></i></a>
+                    <a href="https://www.instagram.com/tomas_borgstrom/" target="blank"><i className="fab fa-instagram"></i></a>
+                    <a href="https://ar.linkedin.com/in/santiago-homps" target="blank"><i className="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Frukostman" target="blank"><i className="fab fa-github"></i></a>
                     </div>
-                <div class="footer-copyright pt-3">
-                    <p>by: <i class="fas fa-rocket"></i> &nbsp;&nbsp; Santiago Homps</p>
+                <div className="footer-copyright pt-3">
+                    <p>by: <i className="fas fa-rocket"></i> &nbsp;&nbsp; Santiago Homps</p>
                 </div>
                 </div>
             </footer>
     )
 }
 
+export default Footer

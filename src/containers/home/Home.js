@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import ItemList from '../../components/ItemList/ItemList'
+import Loading  from "../../components/Loading/Loading";
 import TraerProdFB from '../../Productos/ProductosFB'
 import { Link, useParams } from 'react-router-dom'
 import './home.css'
@@ -47,22 +48,22 @@ const Home = () => {
                   <h5>Por estacion:</h5>
                   <ul>
                     <li>
-                      <Link style={{color: "yellow"}} to={`/estacion/Verano`}>
+                      <Link style={{color: "#F1C40F"}} to={`/estacion/Verano`}>
                           <p className="display-1">Verano <i class="fas fa-sun"></i></p>
                       </Link>
                     </li>
                     <li>
-                      <Link style={{color: "brown"}} to={`/estacion/Otoño`}>
+                      <Link style={{color: "#61210F"}} to={`/estacion/Otoño`}>
                           <p className="display-1">Otoño <i class="fab fa-canadian-maple-leaf"></i></p>
                       </Link>
                     </li>
                     <li>
-                      <Link style={{color: "blue"}} to={`/estacion/Invierno`}>
+                      <Link style={{color: "#4BB3FD"}} to={`/estacion/Invierno`}>
                           <p className="display-1">Invierno <i class="fas fa-snowflake"></i></p>
                       </Link>
                     </li>
                     <li>
-                      <Link style={{color: "green"}} to={`/estacion/Primavera`}>
+                      <Link style={{color: "#109648"}} to={`/estacion/Primavera`}>
                           <p className="display-1">Primavera <i class="fas fa-seedling"></i></p>
                       </Link>
                     </li>
@@ -72,15 +73,14 @@ const Home = () => {
       )
 
     }
-
-
+    
 return (
 
     <>
         <div className="container-fluid text-center m-1">
           <div className="btn-group">
           
-            {loading ? <h1 className="mb-5 text-center animate__animated animate__pulse">Loading...</h1> : <><Filtros/><ItemList items={producto}/></>}
+            {loading ? <Loading /> : <><Filtros/><ItemList items={producto}/></>}
           </div>
         </div> 
         

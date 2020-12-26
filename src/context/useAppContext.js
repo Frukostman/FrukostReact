@@ -28,7 +28,7 @@ export const AppProvider = ({children}) => {
       }
 
       const sumarPrecioTotal = (array) => {
-        console.log(array)
+        
         let total = 0
         array.forEach(element => {
           total = total + (element.price * element.cantidad)

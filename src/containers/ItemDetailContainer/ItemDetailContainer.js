@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
+import Loading from '../../components/Loading/Loading'
 import { getFirestore } from '../../firebase/index';
 
 
@@ -36,7 +37,7 @@ export default function ItemDetailContainer() {
 
               return(
                       <> 
-                      {loading ? <h1 className="text-center animate__animated animate__pulse">Loading...</h1> : <ItemDetail info={producto}/>}
+                      {loading ? <Loading /> : <ItemDetail info={producto}/>}
                       </>
               )
 }

@@ -3,5 +3,8 @@
 }
 .icono i:hover {
     opacity: 1;
-    transform: scale(1.05); 
+    color:white;
+    transform: scale(1.06);
+    transition: ease;
+    transition-duration: 300ms;
 }

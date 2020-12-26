@@ -26,7 +26,7 @@ export default function ItemDetail({info}) {
                     <div className="detalleProducto ml-3">
                         <h2 >{info.name}</h2>
                         <h5 className="text-muted">Precio x kg:</h5> 
-                            <del className="text-muted">{info.price * 1.35} $</del>
+                            <del className="text-muted">{Math.floor(info.price * 1.35)} $</del>
                             <h5> <strong><mark>{info.price} $</mark> </strong> </h5>
                         <p><em>Origen:</em> {info.origin}</p>
                         <p><em>Estacionalidad:</em> {info.season}</p>
@@ -35,7 +35,7 @@ export default function ItemDetail({info}) {
                         <div className="botonera">
 
                             <NavLink to={`/home`}>                     
-                            <button onClick={() => addProductToCarrito(producto, cantidadCart)} className="btn btn-outline-dark"> <strong>Comprar: {cantidadCart} kg </strong></button>
+                            <button onClick={() => addProductToCarrito(producto, cantidadCart)} className="btn btn-outline-dark"> <strong>Agregar al carrito: {cantidadCart} kg </strong></button>
                             </NavLink> 
                             <ItemCounter initialValue={1} maxValue={10} onAdd={onAddItem}/>
 

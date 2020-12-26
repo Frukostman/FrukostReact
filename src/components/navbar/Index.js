@@ -29,7 +29,16 @@ export default function Navbar() {
             <div className="containerFluid">
                 <div className="navbar px-5 pb-3">
                     <Icon iconName={"home"} callback={handleClick}/>
-                    <div className="header"><h1>FRU<span>kost</span></h1></div>
+                    <div className="header row">
+                        <p>F</p>
+                        <p>R</p>
+                        <p>U</p>
+                        <p>K</p>
+                        <p>O</p>
+                        <p>S</p>
+                        <p>T</p>
+                        <p><i className="fas fa-fire"></i></p>
+                        </div>
                     <Icon iconName={"shopping-cart"} callback={handleClick}/>
                     <p className="cantidadCart">{ sumaTotal() }</p>
                 </div>
