@@ -25,31 +25,6 @@ export default function Cart() {
            </div>
        )}
     
-    const realizarCompra = () => {
-
-        // let nombre = document.querySelector("#fname").value;
-        // let PrecioTotal = sumarPrecioTotal(carrito);
-
-        //     const newOrder = {
-        //         buyer: nombre,
-        //         items: carrito,
-        //         // date: firebase.firestore.Timestamp.fromDate(new Date()),
-        //         total: PrecioTotal,
-        //      }
-    
-        //      console.log(nombre)
-        //      orders.add(newOrder).then(({ id }) => {
-        //          setOrderId(id)
-        //      }).catch(err => {
-        //          console.log(err)
-        //      }).finally(() => {
-        //          alert("Compra realizada con exito")
-        //          console.log(orderId)
-        //      })
-        
-             
-     }
-    
     const ItemsCarrito = () => {
     
               return(
@@ -75,10 +50,11 @@ export default function Cart() {
                                         <hr/>            
                                             <div className="text-center mb-3">                                    
                                                 <h3 id="TotalCarrito" className="pr-3"><span className="text-muted">Total:</span><mark>{sumarPrecioTotal(carrito)}$</mark></h3>        
-                                                <button className="btn btn-danger botonCart m-1" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
+                                                <button className="btn btn-danger botonCart m-2" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
                                                 <Link to={`/checkout`}>
-                                                    <button className="btn btn-success botonCart m-1" onClick={() => realizarCompra()}>Comprar</button>
+                                                    <button className="btn btn-success botonCart m-2">Comprar</button>
                                                 </Link>
+                                                <br/>
                                             </div>
                                         </div> 
                                     </div>                                

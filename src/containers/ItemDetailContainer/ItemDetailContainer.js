@@ -8,7 +8,6 @@ import { getFirestore } from '../../firebase/index';
 export default function ItemDetailContainer() {
     
     const { id } = useParams();
-    console.log(id)
 
     const [loading, setLoading] = useState(true);
     const [producto, setProducto] = useState({});
@@ -17,10 +16,8 @@ export default function ItemDetailContainer() {
 
             const db = getFirestore();
             const itemCollection = db.collection("productos");
-            console.log(itemCollection)
 
             const idItem = itemCollection.doc(id)
-            console.log(idItem)
 
             idItem.get().then((response, reject) => {
 

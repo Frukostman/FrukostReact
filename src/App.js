@@ -2,6 +2,7 @@ import Navbar from './components/navbar/Index';
 import Error from './components/Error/Error';
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer'
+import Thanks from './components/Thanks/Thanks'
 
 import Home from './containers/home/Home';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
@@ -27,6 +28,10 @@ function App() {
 
               <Route exact path='/checkout'>
                 <Checkout />
+              </Route>
+
+              <Route exact path='/thanks'>
+                <Thanks />
               </Route>
 
               <Route exact path="/home">

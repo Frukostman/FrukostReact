@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import ItemCounter from '../ItemCounter/ItemCounter'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ItemDetail.css';
 
 import useAppContext from '../../context/useAppContext';
@@ -34,9 +34,9 @@ export default function ItemDetail({info}) {
 
                         <div className="botonera">
 
-                            <NavLink to={`/home`}>                     
+                            <Link to={`/home`}>                     
                             <button onClick={() => addProductToCarrito(producto, cantidadCart)} className="btn btn-outline-dark"> <strong>Agregar al carrito: {cantidadCart} kg </strong></button>
-                            </NavLink> 
+                            </Link> 
                             <ItemCounter initialValue={1} maxValue={10} onAdd={onAddItem}/>
 
                         </div>
