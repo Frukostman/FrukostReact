@@ -8,16 +8,22 @@
 }
 
 .filtros i {
-    font-size: 20px;
+    font-size: 18px;
+    opacity: 0.5;
 }
 .filtros p {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 0px;
     margin-top: 10px;
+    color: black;
+    opacity: 0.5;
 }
 .filtros p:hover {
-    text-decoration: none;
+    transform: scale(1.06);
+    transition: ease;
+    transition-duration: 300ms;
+    opacity: 1;
 }
 ul {
     list-style-type: none;
@@ -28,5 +34,5 @@ h3 {
     margin: 0px;
 }
 h5 {
-    font-weight: 300;
+    font-weight: 400;
 }

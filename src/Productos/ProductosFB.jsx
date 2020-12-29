@@ -4,7 +4,6 @@ import { getFirestore } from "../firebase/index";
 // //Funcion para llamar a firebase "productos"
 const TraerProdFB = (cat, sea) => {
 
-
   return new Promise((resolve, reject) => {
 
     //llamada a la coleccion productos

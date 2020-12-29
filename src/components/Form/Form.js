@@ -10,7 +10,7 @@ import { getFirestore } from '../../firebase/index';
 
 const Form = () => {
 
-    const { carrito, sumarPrecioTotal } = useAppContext()
+    const { carrito, sumarPrecioTotal, vaciarCarrito } = useAppContext()
 
     const [orderId, setOrderId] = useState()
     const [datos, setDatos] = useState({
@@ -42,6 +42,7 @@ const Form = () => {
         } 
         else {
             guardarEnFB()
+            vaciarCarrito()
         } 
     }
 
@@ -73,7 +74,7 @@ const Form = () => {
         })
          .finally((e) => {
             console.log(orderId)
-            carrito = []
+
          }) 
         
 
@@ -91,7 +92,7 @@ const Form = () => {
                    <div className="col mt-1 p-0">
                         <input type="number" placeholder="Telefono" className="form-control" onChange={handleInputChange} name="telefono"/>
                    </div>
-                   <p className="informacion text-muted pt- mb-0">Dejanos un mail de contacto</p>
+                   <p className="informacion text-muted mb-0">Dejanos un mail de contacto</p>
                    <div id="alerta">
                         <div className="col mt-1 p-0">
                                 <input type="mail" placeholder="Ingresa tu email" className="form-control" onChange={handleInputChange} name="email1"/>

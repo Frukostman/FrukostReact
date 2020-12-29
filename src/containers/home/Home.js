@@ -1,8 +1,11 @@
 import {useState, useEffect} from 'react'
+import { Link, useParams } from 'react-router-dom'
+
 import ItemList from '../../components/ItemList/ItemList'
 import Loading  from "../../components/Loading/Loading";
+
 import TraerProdFB from '../../Productos/ProductosFB'
-import { Link, useParams } from 'react-router-dom'
+
 import './home.css'
 
 const Home = () => {
@@ -32,12 +35,12 @@ const Home = () => {
                 <h5>Por tipo:</h5>
                 <ul>
                   <li>
-                    <Link style={{color: "crimson"}} to={`/tipo/Fruta`}>
+                    <Link to={`/tipo/Fruta`}>
                       <p className="display-1"> Frutas <i class="fas fa-apple-alt"></i></p>
                     </Link>
                   </li>
                   <li>
-                    <Link style={{color: "green"}} to={`/tipo/Verdura`}>
+                    <Link to={`/tipo/Verdura`}>
                         <p className="display-1">Verduras <i class="fas fa-carrot"></i></p>
                     </Link>
                   </li>
@@ -48,22 +51,22 @@ const Home = () => {
                   <h5>Por estacion:</h5>
                   <ul>
                     <li>
-                      <Link style={{color: "#F1C40F"}} to={`/estacion/Verano`}>
+                      <Link to={`/estacion/Verano`}>
                           <p className="display-1">Verano <i class="fas fa-sun"></i></p>
                       </Link>
                     </li>
                     <li>
-                      <Link style={{color: "#61210F"}} to={`/estacion/Otoño`}>
+                      <Link to={`/estacion/Otoño`}>
                           <p className="display-1">Otoño <i class="fab fa-canadian-maple-leaf"></i></p>
                       </Link>
                     </li>
                     <li>
-                      <Link style={{color: "#4BB3FD"}} to={`/estacion/Invierno`}>
+                      <Link to={`/estacion/Invierno`}>
                           <p className="display-1">Invierno <i class="fas fa-snowflake"></i></p>
                       </Link>
                     </li>
                     <li>
-                      <Link style={{color: "#109648"}} to={`/estacion/Primavera`}>
+                      <Link to={`/estacion/Primavera`}>
                           <p className="display-1">Primavera <i class="fas fa-seedling"></i></p>
                       </Link>
                     </li>

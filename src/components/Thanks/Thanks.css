@@ -1,0 +1,19 @@
+.linkHome p {
+    margin: 5px;
+    padding: 0px;
+    font-size: 40px;
+    font-family: 'Bebas Neue', cursive;
+    color: crimson;
+}
+.linkHome p:hover {
+    transform: scale(1.2);
+}
+.letra {
+    margin: 0px;
+    font-weight: 200;
+    font-size: 25px;
+}
+.thanks {
+    background-color: white;
+    padding: 0px;
+}
