@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
             idItem.get().then((response, reject) => {
 
-                if(response.size === 0) reject(`<h1>error</h1>`)
+                if(response.size === 0) reject(`<h1>error<h1/>`)
 
                 const item = {...response.data(), id: id }                                        
            

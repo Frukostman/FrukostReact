@@ -23,8 +23,8 @@ const ItemCounter = ({initialValue, maxValue, onAdd}) => {
     return (
             <div className="">
                 <div className="col botonesContador">
-                    <i style={{color : "green"}} onClick={incrementar} class="fas fa-plus-square"></i>
-                    <i style={{color : "red"}} onClick={restar} class="fas fa-minus-square"></i>
+                    <i style={{color : "green"}} onClick={incrementar} className="fas fa-plus-square"></i>
+                    <i style={{color : "red"}} onClick={restar} className="fas fa-minus-square"></i>
                 </div>
             </div>            
     );

@@ -15,7 +15,7 @@ const Footer = () =>{
                     <a href="https://github.com/Frukostman" target="blank"><i className="fab fa-github"></i></a>
                     </div>
                 <div className="footer-copyright pt-3">
-                    <p>Ilustraciones by:  &nbsp;<i class="fab fa-rebel"></i> &nbsp; Santiago Homps</p>
+                    <p>Ilustraciones by:  &nbsp;<i className="fab fa-rebel"></i> &nbsp; Santiago Homps</p>
                 </div>
                 </div>
             </footer>

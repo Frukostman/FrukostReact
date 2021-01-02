@@ -13,12 +13,12 @@ const Filtros = () => {
               <ul>
                 <li>
                   <Link to={`/tipo/Fruta`} style={{ textDecoration: 'none' }}>
-                    <p className="display-1"> Frutas <i class="fas fa-apple-alt"></i></p>
+                    <p className="display-1"> Frutas <i className="fas fa-apple-alt"></i></p>
                   </Link>
                 </li>
                 <li>
                   <Link to={`/tipo/Verdura`} style={{ textDecoration: 'none' }}>
-                      <p className="display-1">Verduras <i class="fas fa-carrot"></i></p>
+                      <p className="display-1">Verduras <i className="fas fa-carrot"></i></p>
                   </Link>
                 </li>
               </ul>
@@ -29,27 +29,27 @@ const Filtros = () => {
                 <ul>
                   <li>
                     <Link to={`/estacion/Verano`} style={{ textDecoration: 'none' }}>
-                        <p className="display-1">Verano <i class="fas fa-sun"></i></p>
+                        <p className="display-1">Verano <i className="fas fa-sun"></i></p>
                     </Link>
                   </li>
                   <li>
                     <Link to={`/estacion/Otoño`} style={{ textDecoration: 'none' }}>
-                        <p className="display-1">Otoño <i class="fab fa-canadian-maple-leaf"></i></p>
+                        <p className="display-1">Otoño <i className="fab fa-canadian-maple-leaf"></i></p>
                     </Link>
                   </li>
                   <li>
                     <Link to={`/estacion/Invierno`} style={{ textDecoration: 'none' }}>
-                        <p className="display-1">Invierno <i class="fas fa-snowflake"></i></p>
+                        <p className="display-1">Invierno <i className="fas fa-snowflake"></i></p>
                     </Link>
                   </li>
                   <li>
                     <Link to={`/estacion/Primavera`} style={{ textDecoration: 'none' }}>
-                        <p className="display-1">Primavera <i class="fas fa-seedling"></i></p>
+                        <p className="display-1">Primavera <i className="fas fa-seedling"></i></p>
                     </Link>
                   </li>
                   <br/>
                   <Link to={`/home`} style={{ textDecoration: 'none' }}>
-                        <p className="display-1">Ver todos <i class="fas fa-globe-americas"></i></p>
+                        <p className="display-1">Ver todos <i className="fas fa-globe-americas"></i></p>
                     </Link>
                 </ul>
               </div>

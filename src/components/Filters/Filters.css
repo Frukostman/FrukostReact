@@ -1,0 +1,38 @@
+.filtros {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 15px;
+    opacity: 0.9;
+    justify-content: left;
+}
+
+.filtros i {
+    font-size: 18px;
+    opacity: 0.5;
+}
+.filtros p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    color: black;
+    opacity: 0.5;
+}
+.filtros p:hover {
+    transform: scale(1.06);
+    transition: ease-in-out;
+    transition-duration: 500ms;
+    opacity: 1;
+}
+ul {
+    list-style-type: none;
+    padding: 0px 5px;
+}
+h3 {
+    font-family: 'Bebas Neue', cursive;
+    margin: 0px;
+}
+h5 {
+    font-weight: 400;
+}
