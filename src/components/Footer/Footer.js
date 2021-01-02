@@ -1,6 +1,8 @@
 import './Footer.css';
 
+
 const Footer = () =>{
+    
     return(
         <footer>
                 <p></p>
@@ -13,7 +15,7 @@ const Footer = () =>{
                     <a href="https://github.com/Frukostman" target="blank"><i className="fab fa-github"></i></a>
                     </div>
                 <div className="footer-copyright pt-3">
-                    <p>by: <i className="fas fa-rocket"></i> &nbsp;&nbsp; Santiago Homps</p>
+                    <p>Ilustraciones by:  &nbsp;<i class="fab fa-rebel"></i> &nbsp; Santiago Homps</p>
                 </div>
                 </div>
             </footer>

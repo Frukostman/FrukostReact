@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import './index.css'
 
+import './index.css'
 
 
 const ItemCounter = ({initialValue, maxValue, onAdd}) => {
@@ -18,20 +18,15 @@ const ItemCounter = ({initialValue, maxValue, onAdd}) => {
             setCounter(counter - 1)
             onAdd(counter - 1)
         }
- 
     }
-    
 
     return (
-        
-        
             <div className="">
                 <div className="col botonesContador">
                     <i style={{color : "green"}} onClick={incrementar} class="fas fa-plus-square"></i>
                     <i style={{color : "red"}} onClick={restar} class="fas fa-minus-square"></i>
                 </div>
             </div>            
-        
     );
 }
 

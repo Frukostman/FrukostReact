@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom'
 
 import './Icon.css'
 
-export default function Icon({iconName, callback}) {
+
+const Icon = ({iconName, callback}) => {
 
     return (
         <div >
@@ -12,11 +13,4 @@ export default function Icon({iconName, callback}) {
     )    
 }
 
-
-
-
-
-
-
-
-
+export default Icon

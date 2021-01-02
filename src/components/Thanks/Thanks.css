@@ -1,8 +1,11 @@
-.linkHome p {
+.linkHome  {
     margin: 5px;
     padding: 0px;
     font-size: 40px;
     font-family: 'Bebas Neue', cursive;
+    color: crimson;
+}
+.linkHome p {
     color: crimson;
 }
 .linkHome p:hover {
@@ -12,6 +15,10 @@
     margin: 0px;
     font-weight: 200;
     font-size: 25px;
+}
+.id {
+    color: crimson;
+    font-weight: 500;
 }
 .thanks {
     background-color: white;

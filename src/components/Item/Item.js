@@ -1,8 +1,7 @@
 import {Link} from 'react-router-dom'
 
-
-
 import './item.css';
+
 
 const Item = ({ card }) => {
 
@@ -16,16 +15,14 @@ const Item = ({ card }) => {
                         <p>Origen: <b>{card.origin}</b></p>
                         <p>Precio x kg: <b>{card.price}$</b></p>
                     </div>
-                    <Link to={`/detalles/${card.id}`}>
+                    <Link to={`/detalles/${card.id}`} style={{ textDecoration: 'none' }}>
                         <button className="btn btn-outline-success btn-block">Comprar! </button>
                     </Link> 
                 </div>
 
             </div>
         </>
-    )
-        
-    };
-
+    )  
+};
 
 export default Item

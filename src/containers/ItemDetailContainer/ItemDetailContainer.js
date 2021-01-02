@@ -1,11 +1,13 @@
-import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import Loading from '../../components/Loading/Loading'
+
+import {useState, useEffect} from 'react'
+import {useParams} from 'react-router-dom'
+
 import { getFirestore } from '../../firebase/index';
 
 
-export default function ItemDetailContainer() {
+const ItemDetailContainer = () => {
     
     const { id } = useParams();
 
@@ -38,3 +40,5 @@ export default function ItemDetailContainer() {
                       </>
               )
 }
+
+export default ItemDetailContainer

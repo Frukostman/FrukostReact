@@ -1,6 +1,5 @@
 import { getFirestore } from "../firebase/index";
 
-
 // //Funcion para llamar a firebase "productos"
 const TraerProdFB = (cat, sea) => {
 
@@ -14,20 +13,17 @@ const TraerProdFB = (cat, sea) => {
     // Filtro por estacion
       if (sea) products = products.where("season", "==", `${sea}`);
 
-
       products.get().then((response) => {
         //chequeo de validez de url
           if (response.size === 0) {
               reject('No hay registros');   
           }
-
           //Devolucion de objetos
           const data = response.docs.map((doc) => ({...doc.data(), id: doc.id }));
 
           resolve(data);
       })
   })
-
 }
 
 export default TraerProdFB

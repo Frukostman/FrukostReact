@@ -1,13 +1,13 @@
-import './index.css';
 import Icon from '../../components/Icon/Icon';
+
 import useAppContext from '../../context/useAppContext';
+
+import './index.css';
 
 
 export default function Navbar() {
 
     const { carrito } = useAppContext()
-
-    
 
     const sumaTotal = () => {
         let total = 0  
@@ -15,7 +15,6 @@ export default function Navbar() {
             total = total + element.cantidad
         });
         if(total >0) {
-
             return total
         }
     };
@@ -23,7 +22,6 @@ export default function Navbar() {
     const handleClick = (e) => {
         //console.log(e.target.outerHTML)
     };
-
 
     return(
             <div className="containerFluid">
@@ -42,7 +40,6 @@ export default function Navbar() {
                     <Icon iconName={"shopping-cart"} callback={handleClick}/>
                     <p className="cantidadCart">{ sumaTotal() }</p>
                 </div>
-            </div>         
-       
+            </div>          
     )
 }

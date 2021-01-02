@@ -15,7 +15,6 @@ const app = firebase.initializeApp(
 export const getFirebase = () => {
     return app;
 }
-
 //para llamar la base de datos
 export const getFirestore = () => {
     return firebase.firestore();

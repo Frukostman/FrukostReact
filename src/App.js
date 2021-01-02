@@ -1,9 +1,9 @@
+//components
 import Navbar from './components/navbar/Index';
 import Error from './components/Error/Error';
 import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer'
-import Thanks from './components/Thanks/Thanks'
-
+//containers
 import Home from './containers/home/Home';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
 import Checkout from '../src/containers/Checkout/Checkout'
@@ -30,10 +30,6 @@ function App() {
                 <Checkout />
               </Route>
 
-              <Route exact path='/thanks'>
-                <Thanks />
-              </Route>
-
               <Route exact path="/home">
                 <Home />
               </Route>
@@ -54,6 +50,10 @@ function App() {
                 <ItemDetailContainer />
               </Route>
 
+              <Route exact path='/detalles/:otro?'>
+                <Error />
+              </Route>
+
               <Route path='/:otro?'>
                 <Error />
               </Route>
@@ -63,8 +63,6 @@ function App() {
         </BrowserRouter>
       </AppProvider>
     </div>
-
-    
   );
 }
 
