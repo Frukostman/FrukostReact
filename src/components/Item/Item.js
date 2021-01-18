@@ -19,7 +19,6 @@ const Item = ({ card }) => {
                         <button className="btn btn-outline-success btn-block">Comprar! </button>
                     </Link> 
                 </div>
-
             </div>
         </>
     )  
