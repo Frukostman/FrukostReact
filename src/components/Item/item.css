@@ -13,18 +13,17 @@
 }
 .producto:hover {
     transform: scale(1.05);
-    transition: 0.4s ease-in-out;
+    transition:  all 0.4s ease-in-out;
     height: auto;
 }
 
 .producto:hover button {
     visibility: visible;
-    transition: 0.4s ease-in-out;
+    
 }
 
 .producto:hover img {
     opacity: 1;
-    /* transform: scale(1.2); */
 }
 
 .producto button {

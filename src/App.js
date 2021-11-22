@@ -61,6 +61,7 @@ function App() {
             </Switch>
             <Footer />
         </BrowserRouter>
+        
       </AppProvider>
     </div>
   );
